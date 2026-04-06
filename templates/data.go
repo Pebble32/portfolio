@@ -13,7 +13,7 @@ var projects = []Project{
 	{
 		Slug:        "itinerary-scoring-pipeline",
 		Title:       "Itinerary Scoring ML Pipeline",
-		Image:       "/static/images/itinerary-pipeline.jpg",
+		Icon:        "\u2708\uFE0F",
 		Description: "ML pipeline processing 2.6 billion rows daily to score and rank flight itineraries at Dohop.",
 		LongDescription: "Architected an itinerary scoring ML pipeline achieving 99.4% recall at a 50% index cut, " +
 			"processing 2.6 billion rows daily. Optimized content delivery and booking conversion across airline partners. " +
@@ -24,7 +24,7 @@ var projects = []Project{
 	{
 		Slug:        "flight-disruption-model",
 		Title:       "Flight Disruption Probability Model",
-		Image:       "/static/images/flight-disruption.jpg",
+		Icon:        "\u26A0\uFE0F",
 		Description: "Near-instant insurance pricing model for flight disruptions, projected to save ~25K/month.",
 		LongDescription: "Built a flight disruption probability model serving near-instant insurance pricing lookups at booking time. " +
 			"The model predicts the likelihood of delays and cancellations, enabling dynamic pricing for travel insurance products. " +
@@ -34,7 +34,7 @@ var projects = []Project{
 	{
 		Slug:        "fish-detection-yolo",
 		Title:       "Real-Time Fish Species Detection",
-		Image:       "/static/images/fish-detection.jpg",
+		Icon:        "\U0001F41F",
 		Description: "YOLO-based fish species and gender detection system, cutting inference time by 66% across 530K frames.",
 		LongDescription: "Built a real-time fish species and gender detection system using YOLO architecture at the " +
 			"Marine and Freshwater Institute of Iceland. Applied frame-skipping, image downsampling, and a Bayesian " +
@@ -45,7 +45,7 @@ var projects = []Project{
 	{
 		Slug:        "anomaly-detection",
 		Title:       "Booking Anomaly Detection",
-		Image:       "/static/images/anomaly-detection.jpg",
+		Icon:        "\U0001F6A8",
 		Description: "Automated real-time anomaly detection for booking traffic across partners at Dohop.",
 		LongDescription: "Built an automated anomaly detection system for real-time monitoring of booking traffic across " +
 			"partners and operational parts of the system at Dohop. Deployed to SageMaker Serverless for " +
@@ -55,7 +55,7 @@ var projects = []Project{
 	{
 		Slug:        "efficient-3d-cnn",
 		Title:       "Efficient 3D CNN for Action Recognition",
-		Image:       "/static/images/3d-cnn.jpg",
+		Icon:        "\U0001F3AC",
 		Description: "3D CNN achieving 86.24% on UCF-101 with 44.8% fewer parameters than I3D.",
 		LongDescription: "Designed an efficient 3D CNN architecture inspired by ResNet-50 bottleneck designs, combined with " +
 			"TrivialAugmentation. The model uses approximately 13.8M parameters — 44.8% fewer than I3D — while " +
@@ -67,7 +67,7 @@ var projects = []Project{
 	{
 		Slug:        "video-model-interpretability",
 		Title:       "Interpreting Video Models",
-		Image:       "/static/images/video-interp.jpg",
+		Icon:        "\U0001F50D",
 		Description: "Visualizing attention in Video Transformers and Grad-CAM in 3D CNNs for action recognition.",
 		LongDescription: "Explored interpretability of video action recognition models. Visualized internal attention " +
 			"mechanisms of TimeSFormer to reveal which spatio-temporal regions influence predictions. Applied Grad-CAM " +
@@ -78,7 +78,7 @@ var projects = []Project{
 	{
 		Slug:        "physics-simulation-ml",
 		Title:       "Simulation and Learning in Physical Systems",
-		Image:       "/static/images/physics-sim.jpg",
+		Icon:        "\u2699\uFE0F",
 		Description: "Neural networks for approximating physical systems: Lorenz attractors, Lotka-Volterra, and the Ising model.",
 		LongDescription: "Applied neural networks to learn and simulate physical systems. Covered sine function approximation " +
 			"as a baseline, then moved to chaotic dynamics (Lorenz attractor), predator-prey dynamics (Lotka-Volterra), " +
@@ -89,7 +89,7 @@ var projects = []Project{
 	{
 		Slug:        "uni-carpooling-app",
 		Title:       "University Carpooling Platform",
-		Image:       "/static/images/carpooling.jpg",
+		Icon:        "\U0001F697",
 		Description: "Mobile carpooling app for University of Iceland students and staff with real-time ride matching.",
 		LongDescription: "Designed and developed a carpooling platform for Háskóli Íslands, enabling students and staff " +
 			"to create and join campus-bound rides from their smartphones. Features include HÍ email verification, " +

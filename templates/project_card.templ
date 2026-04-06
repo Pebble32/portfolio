@@ -3,7 +3,7 @@ package templates
 type Project struct {
 	Slug            string
 	Title           string
-	Image           string
+	Icon            string
 	Description     string
 	LongDescription string
 	Tags            []string
@@ -18,15 +18,18 @@ templ ProjectCard(p Project) {
 		<div class="bg-[#000080] px-3 py-1">
 			<span class="text-white text-lg">{ p.Title }</span>
 		</div>
-		<div class="p-2">
-			<div class="win98-border-inset bg-white">
-				<img src={ p.Image } alt={ p.Title } class="w-full h-48 object-cover"/>
-			</div>
-			<p class="mt-2 px-1 text-base">{ p.Description }</p>
-			<div class="mt-2 px-1 flex flex-wrap gap-1">
-				for _, tag := range p.Tags {
-					<span class="win98-border-inset bg-white px-2 text-sm">{ tag }</span>
-				}
+		<div class="p-3 flex gap-4 items-start">
+			<span class="text-5xl shrink-0">{ p.Icon }</span>
+			<div>
+				<p class="text-base">{ p.Description }</p>
+				<div class="mt-2 flex flex-wrap gap-1">
+					for _, tag := range p.Tags {
+						<span class="win98-border-inset bg-white px-2 text-sm">{ tag }</span>
+					}
+				</div>
+				<div class="mt-3">
+					<span class="win98-btn text-sm">OK</span>
+				</div>
 			</div>
 		</div>
 	</a>
