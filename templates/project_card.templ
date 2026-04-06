@@ -1,10 +1,12 @@
 package templates
 
 type Project struct {
-	Slug        string
-	Title       string
-	Image       string
-	Description string
+	Slug            string
+	Title           string
+	Image           string
+	Description     string
+	LongDescription string
+	Tags            []string
 }
 
 templ ProjectCard(p Project) {
@@ -21,6 +23,11 @@ templ ProjectCard(p Project) {
 				<img src={ p.Image } alt={ p.Title } class="w-full h-48 object-cover"/>
 			</div>
 			<p class="mt-2 px-1 text-base">{ p.Description }</p>
+			<div class="mt-2 px-1 flex flex-wrap gap-1">
+				for _, tag := range p.Tags {
+					<span class="win98-border-inset bg-white px-2 text-sm">{ tag }</span>
+				}
+			</div>
 		</div>
 	</a>
 }
