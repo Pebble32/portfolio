@@ -1,3 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'VT323', 'MS Sans Serif', 'Arial', sans-serif;
+    background-color: #008080;
+  }
+}
+
+@layer components {
+  .win98-border {
+    border: 2px solid;
+    border-color: #dfdfdf #808080 #808080 #dfdfdf;
+  }
+  .win98-border-inset {
+    border: 2px solid;
+    border-color: #808080 #dfdfdf #dfdfdf #808080;
+  }
+  .win98-btn {
+    background-color: #c0c0c0;
+    border: 2px solid;
+    border-color: #dfdfdf #808080 #808080 #dfdfdf;
+    padding: 2px 12px;
+    font-family: 'VT323', 'MS Sans Serif', sans-serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  .win98-btn:active {
+    border-color: #808080 #dfdfdf #dfdfdf #808080;
+  }
+}

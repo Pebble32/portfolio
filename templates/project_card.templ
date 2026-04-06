@@ -1,0 +1,26 @@
+package templates
+
+type Project struct {
+	Slug        string
+	Title       string
+	Image       string
+	Description string
+}
+
+templ ProjectCard(p Project) {
+	<a href={ templ.SafeURL("/projects/" + p.Slug) }
+		hx-get={ "/projects/" + p.Slug }
+		hx-target="#content"
+		hx-push-url="true"
+		class="block w-full max-w-lg win98-border bg-[#c0c0c0] no-underline text-black hover:brightness-105">
+		<div class="bg-[#000080] px-3 py-1">
+			<span class="text-white text-lg">{ p.Title }</span>
+		</div>
+		<div class="p-2">
+			<div class="win98-border-inset bg-white">
+				<img src={ p.Image } alt={ p.Title } class="w-full h-48 object-cover"/>
+			</div>
+			<p class="mt-2 px-1 text-base">{ p.Description }</p>
+		</div>
+	</a>
+}

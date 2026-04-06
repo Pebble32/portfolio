@@ -41,7 +41,7 @@ func layout(title string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</title><link rel=\"stylesheet\" href=\"/static/css/tw.css\"><script src=\"https://unpkg.com/htmx.org@2.0.3\" integrity=\"sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq\" crossorigin=\"anonymous\"></script></head><body>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</title><link rel=\"stylesheet\" href=\"/static/css/tw.css\"><script src=\"https://unpkg.com/htmx.org@2.0.3\" integrity=\"sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq\" crossorigin=\"anonymous\"></script></head><body class=\"min-h-screen p-4 md:p-8\"><div class=\"max-w-3xl mx-auto win98-border bg-[#c0c0c0]\"><div class=\"bg-[#000080] px-3 py-1 flex items-center justify-between\"><span class=\"text-white text-lg font-bold tracking-wide\">Adam's Portfolio</span><div class=\"flex gap-1\"><button class=\"win98-btn !p-0 w-5 h-5 text-xs leading-none\">_</button> <button class=\"win98-btn !p-0 w-5 h-5 text-xs leading-none\">x</button></div></div><nav class=\"flex gap-1 px-2 py-1 bg-[#c0c0c0] border-b border-[#808080]\"><a href=\"/\" hx-get=\"/\" hx-target=\"#content\" hx-push-url=\"true\" class=\"win98-btn text-black no-underline\">Home</a> <a href=\"/projects\" hx-get=\"/projects\" hx-target=\"#content\" hx-push-url=\"true\" class=\"win98-btn text-black no-underline\">Projects</a></nav><div id=\"content\" class=\"win98-border-inset bg-white m-2 min-h-[400px]\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -49,7 +49,7 @@ func layout(title string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</body></html>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</div><div class=\"px-2 py-1 text-sm text-gray-600 border-t border-[#dfdfdf]\">Ready</div></div></body></html>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

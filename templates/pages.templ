@@ -1,0 +1,53 @@
+package templates
+
+// Fragments - returned for htmx requests (no layout wrapper)
+
+templ HomePage() {
+	<div class="p-6">
+		<h1 class="text-3xl text-[#000080]">Welcome</h1>
+		<p class="mt-4 text-lg">Welcome to my portfolio. Click "Projects" to browse my work.</p>
+	</div>
+}
+
+templ ProjectsPage() {
+	<div class="p-6">
+		<h1 class="text-3xl text-[#000080]">Projects</h1>
+		<div class="mt-6 flex flex-col items-center gap-4">
+			for _, p := range projects {
+				@ProjectCard(p)
+			}
+		</div>
+	</div>
+}
+
+templ ProjectDetailPage(p Project) {
+	<div class="p-6">
+		<a href="/projects" hx-get="/projects" hx-target="#content" hx-push-url="true"
+			class="win98-btn inline-block text-black no-underline mb-4">&larr; Back</a>
+		<div class="win98-border bg-[#c0c0c0] p-1">
+			<img src={ p.Image } alt={ p.Title } class="win98-border-inset w-full max-w-2xl"/>
+		</div>
+		<h1 class="mt-4 text-3xl text-[#000080]">{ p.Title }</h1>
+		<p class="mt-4 text-lg">{ p.Description }</p>
+	</div>
+}
+
+templ ProjectDetailFullPage(p Project) {
+	@layout(p.Title) {
+		@ProjectDetailPage(p)
+	}
+}
+
+// Full pages - returned for normal browser requests (with layout)
+
+templ HomeFullPage() {
+	@layout("Home") {
+		@HomePage()
+	}
+}
+
+templ ProjectsFullPage() {
+	@layout("Projects") {
+		@ProjectsPage()
+	}
+}
