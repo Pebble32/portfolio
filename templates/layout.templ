@@ -15,26 +15,10 @@ templ layout(title string){
         ></script>
     </head>
     <body class="min-h-screen p-4 md:p-8 pb-16">
-        <div class="max-w-3xl mx-auto win98-border bg-[#c0c0c0]">
-            <div class="bg-[#000080] px-3 py-1 flex items-center justify-between">
-                <span class="text-white text-lg font-bold tracking-wide">Adam's Portfolio</span>
-                <div class="flex gap-1">
-                    <button class="win98-btn !p-0 w-5 h-5 text-xs leading-none">_</button>
-                    <button class="win98-btn !p-0 w-5 h-5 text-xs leading-none">x</button>
-                </div>
-            </div>
-            <nav class="flex gap-1 px-2 py-1 bg-[#c0c0c0] border-b border-[#808080]">
-                <a href="/" hx-get="/" hx-target="#content" hx-push-url="true"
-                    class="win98-btn text-black no-underline">Home</a>
-                <a href="/projects" hx-get="/projects" hx-target="#content" hx-push-url="true"
-                    class="win98-btn text-black no-underline">Projects</a>
-            </nav>
-            <div id="content" class="win98-border-inset bg-white m-2 min-h-[400px]">
+        <div id="window" class="max-w-3xl mx-auto">
+            @Window() {
                 { children... }
-            </div>
-            <div class="px-2 py-1 text-sm text-gray-600 border-t border-[#dfdfdf]">
-                Ready
-            </div>
+            }
         </div>
         <!-- Taskbar -->
         <div class="fixed bottom-0 left-0 right-0 h-12 bg-[#c0c0c0] win98-border flex items-center px-1 z-50">
@@ -49,9 +33,9 @@ templ layout(title string){
             <!-- Divider -->
             <div class="w-px h-8 bg-[#808080] mx-1 border-r border-[#dfdfdf]"></div>
             <!-- Quick launch nav -->
-            <a href="/" hx-get="/" hx-target="#content" hx-push-url="true"
+            <a href="/" hx-get="/window/" hx-target="#window" hx-push-url="/"
                 class="win98-btn h-9 px-2 text-black no-underline flex items-center text-sm">Home</a>
-            <a href="/projects" hx-get="/projects" hx-target="#content" hx-push-url="true"
+            <a href="/projects" hx-get="/window/projects" hx-target="#window" hx-push-url="/projects"
                 class="win98-btn h-9 px-2 text-black no-underline flex items-center text-sm ml-1">Projects</a>
             <!-- Spacer -->
             <div class="flex-1"></div>

@@ -41,15 +41,33 @@ func layout(title string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</title><link rel=\"stylesheet\" href=\"/static/css/tw.css\"><script src=\"https://unpkg.com/htmx.org@2.0.3\" integrity=\"sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq\" crossorigin=\"anonymous\"></script></head><body class=\"min-h-screen p-4 md:p-8 pb-16\"><div class=\"max-w-3xl mx-auto win98-border bg-[#c0c0c0]\"><div class=\"bg-[#000080] px-3 py-1 flex items-center justify-between\"><span class=\"text-white text-lg font-bold tracking-wide\">Adam's Portfolio</span><div class=\"flex gap-1\"><button class=\"win98-btn !p-0 w-5 h-5 text-xs leading-none\">_</button> <button class=\"win98-btn !p-0 w-5 h-5 text-xs leading-none\">x</button></div></div><nav class=\"flex gap-1 px-2 py-1 bg-[#c0c0c0] border-b border-[#808080]\"><a href=\"/\" hx-get=\"/\" hx-target=\"#content\" hx-push-url=\"true\" class=\"win98-btn text-black no-underline\">Home</a> <a href=\"/projects\" hx-get=\"/projects\" hx-target=\"#content\" hx-push-url=\"true\" class=\"win98-btn text-black no-underline\">Projects</a></nav><div id=\"content\" class=\"win98-border-inset bg-white m-2 min-h-[400px]\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</title><link rel=\"stylesheet\" href=\"/static/css/tw.css\"><script src=\"https://unpkg.com/htmx.org@2.0.3\" integrity=\"sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq\" crossorigin=\"anonymous\"></script></head><body class=\"min-h-screen p-4 md:p-8 pb-16\"><div id=\"window\" class=\"max-w-3xl mx-auto\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templ_7745c5c3_Var1.Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Var3 := templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
+			templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
+			templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templruntime.GetBuffer(templ_7745c5c3_W)
+			if !templ_7745c5c3_IsBuffer {
+				defer func() {
+					templ_7745c5c3_BufErr := templruntime.ReleaseBuffer(templ_7745c5c3_Buffer)
+					if templ_7745c5c3_Err == nil {
+						templ_7745c5c3_Err = templ_7745c5c3_BufErr
+					}
+				}()
+			}
+			ctx = templ.InitializeContext(ctx)
+			templ_7745c5c3_Err = templ_7745c5c3_Var1.Render(ctx, templ_7745c5c3_Buffer)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			return nil
+		})
+		templ_7745c5c3_Err = Window().Render(templ.WithChildren(ctx, templ_7745c5c3_Var3), templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</div><div class=\"px-2 py-1 text-sm text-gray-600 border-t border-[#dfdfdf]\">Ready</div></div><!-- Taskbar --><div class=\"fixed bottom-0 left-0 right-0 h-12 bg-[#c0c0c0] win98-border flex items-center px-1 z-50\"><!-- Start button + menu --><div class=\"relative\" id=\"start-wrapper\"><button class=\"win98-btn flex items-center gap-1 font-bold text-base h-9 px-2\" hx-get=\"/taskbar/start\" hx-target=\"#start-menu\" hx-swap=\"innerHTML\"><span class=\"text-xl leading-none\">&#x1F4BB;</span> Start</button><div id=\"start-menu\"></div></div><!-- Divider --><div class=\"w-px h-8 bg-[#808080] mx-1 border-r border-[#dfdfdf]\"></div><!-- Quick launch nav --><a href=\"/\" hx-get=\"/\" hx-target=\"#content\" hx-push-url=\"true\" class=\"win98-btn h-9 px-2 text-black no-underline flex items-center text-sm\">Home</a> <a href=\"/projects\" hx-get=\"/projects\" hx-target=\"#content\" hx-push-url=\"true\" class=\"win98-btn h-9 px-2 text-black no-underline flex items-center text-sm ml-1\">Projects</a><!-- Spacer --><div class=\"flex-1\"></div><!-- Clock --><div class=\"win98-border-inset px-3 h-8 flex items-center text-sm\" hx-get=\"/taskbar/clock\" hx-trigger=\"load, every 1s\" hx-swap=\"innerHTML\"></div></div></body></html>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</div><!-- Taskbar --><div class=\"fixed bottom-0 left-0 right-0 h-12 bg-[#c0c0c0] win98-border flex items-center px-1 z-50\"><!-- Start button + menu --><div class=\"relative\" id=\"start-wrapper\"><button class=\"win98-btn flex items-center gap-1 font-bold text-base h-9 px-2\" hx-get=\"/taskbar/start\" hx-target=\"#start-menu\" hx-swap=\"innerHTML\"><span class=\"text-xl leading-none\">&#x1F4BB;</span> Start</button><div id=\"start-menu\"></div></div><!-- Divider --><div class=\"w-px h-8 bg-[#808080] mx-1 border-r border-[#dfdfdf]\"></div><!-- Quick launch nav --><a href=\"/\" hx-get=\"/window/\" hx-target=\"#window\" hx-push-url=\"/\" class=\"win98-btn h-9 px-2 text-black no-underline flex items-center text-sm\">Home</a> <a href=\"/projects\" hx-get=\"/window/projects\" hx-target=\"#window\" hx-push-url=\"/projects\" class=\"win98-btn h-9 px-2 text-black no-underline flex items-center text-sm ml-1\">Projects</a><!-- Spacer --><div class=\"flex-1\"></div><!-- Clock --><div class=\"win98-border-inset px-3 h-8 flex items-center text-sm\" hx-get=\"/taskbar/clock\" hx-trigger=\"load, every 1s\" hx-swap=\"innerHTML\"></div></div></body></html>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

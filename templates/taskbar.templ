@@ -1,0 +1,42 @@
+package templates
+
+templ StartMenuOpen() {
+	<div class="absolute bottom-full left-0 mb-1 w-56 win98-border bg-[#c0c0c0]">
+		<div class="flex">
+			<div class="w-7 bg-[#000080] flex items-end justify-center py-2">
+				<span class="text-white text-xs font-bold [writing-mode:vertical-rl] rotate-180 tracking-widest">Adam</span>
+			</div>
+			<div class="flex-1">
+				<a href="/" hx-get="/window/" hx-target="#window" hx-push-url="/"
+					class="flex items-center gap-3 px-3 py-2 text-black no-underline hover:bg-[#000080] hover:text-white text-base">
+					<span class="text-xl">&#x1F3E0;</span> Home
+				</a>
+				<a href="/projects" hx-get="/window/projects" hx-target="#window" hx-push-url="/projects"
+					class="flex items-center gap-3 px-3 py-2 text-black no-underline hover:bg-[#000080] hover:text-white text-base">
+					<span class="text-xl">&#x1F4C1;</span> Projects
+				</a>
+				<div class="border-t border-[#808080] border-b border-b-[#dfdfdf] mx-2 my-1"></div>
+				<a href="https://github.com/Pebble32" target="_blank" rel="noopener"
+					class="flex items-center gap-3 px-3 py-2 text-black no-underline hover:bg-[#000080] hover:text-white text-base">
+					<span class="text-xl">&#x1F4BB;</span> GitHub
+				</a>
+				<a href="https://linkedin.com/in/adampostek" target="_blank" rel="noopener"
+					class="flex items-center gap-3 px-3 py-2 text-black no-underline hover:bg-[#000080] hover:text-white text-base">
+					<span class="text-xl">&#x1F4E7;</span> LinkedIn
+				</a>
+				<div class="border-t border-[#808080] border-b border-b-[#dfdfdf] mx-2 my-1"></div>
+				<a href="mailto:adampostek@icloud.com"
+					class="flex items-center gap-3 px-3 py-2 text-black no-underline hover:bg-[#000080] hover:text-white text-base">
+					<span class="text-xl">&#x2709;&#xFE0F;</span> Contact
+				</a>
+			</div>
+		</div>
+	</div>
+}
+
+templ StartMenuClosed() {
+}
+
+templ Clock(time string) {
+	{ time }
+}

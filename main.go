@@ -47,6 +47,20 @@ func main() {
 		}
 	})
 
+	http.HandleFunc("/window/minimize", func(w http.ResponseWriter, r *http.Request) {
+		templates.WindowMinimized().Render(r.Context(), w)
+	})
+
+	http.HandleFunc("/window/", func(w http.ResponseWriter, r *http.Request) {
+		page := r.URL.Path[len("/window/"):]
+		switch page {
+		case "projects":
+			templates.WindowProjects().Render(r.Context(), w)
+		default:
+			templates.WindowHome().Render(r.Context(), w)
+		}
+	})
+
 	var startOpen bool
 	http.HandleFunc("/taskbar/start", func(w http.ResponseWriter, r *http.Request) {
 		startOpen = !startOpen
