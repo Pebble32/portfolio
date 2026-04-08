@@ -1,6 +1,27 @@
 package templates
 
-// import "errors"
+import (
+	"encoding/xml"
+	"io"
+	"net/http"
+	"strconv"
+)
+
+type RSS struct{
+	Channel struct{
+		Items []Item `xml:"item"`
+	} `xml:"channel"`
+}
+
+type Item struct{
+      Title      string `xml:"title"`
+      AuthorName string `xml:"author_name"`
+      UserRating string `xml:"user_rating"`
+      UserReview string `xml:"user_review"`
+      Link       string `xml:"link"`
+      ImageURL   string `xml:"book_image_url"`
+      UserShelves string `xml:"user_shelves"`
+}
 
 func GetProjectBySlug(slug string) (Project, bool) {
 	for _, p := range projects {
@@ -12,8 +33,36 @@ func GetProjectBySlug(slug string) (Project, bool) {
 }
 
 func GetBooks() ([]Book, error){
-	return nil, nil
-	//return nil, errors.New("Error while fetching books")
+	res, err := http.Get("https://www.goodreads.com/review/list_rss/164496014")
+	if err != nil {
+		return nil, err
+	}
+
+	body, err := io.ReadAll(res.Body)
+	if err != nil {
+		return nil, err
+	}
+
+	var rss RSS
+	err = xml.Unmarshal(body, &rss)
+	if err != nil {
+		return nil, err
+	}
+
+	var books []Book
+	for _, item := range rss.Channel.Items{
+		rating, _ := strconv.Atoi(item.UserRating)
+		books = append(books, Book{
+			Title:    item.Title,
+			Author:   item.AuthorName,
+			Rating:   rating,
+			Review:   item.UserReview,
+			Link:     item.Link,
+			ImageURL: item.ImageURL,
+			Shelf:    item.UserShelves,
+		})
+	}
+	return books, nil
 }
 
 var projects = []Project{
