@@ -1,0 +1,64 @@
+package templates
+
+type Book struct {
+	Title    string
+	Author   string
+	Rating   int
+	Review   string
+	Link     string
+	ImageURL string
+	Shelf    string
+}
+
+templ BooksPage(books []Book) {
+	<div class="p-6">
+		<h1 class="text-3xl text-[#000080]">C:\Users\Adam&gt; type books.txt</h1>
+		<p class="mt-3 text-lg">I pick up books faster than I pick up new frameworks. Here's the proof.</p>
+		<div class="mt-6 flex flex-col items-center gap-4">
+			for _, b := range books {
+				@BookCard(b)
+			}
+		</div>
+	</div>
+}
+
+templ BookCard(b Book) {
+	<div class="w-full max-w-lg win98-border bg-[#c0c0c0]">
+		<div class="bg-[#000080] px-3 py-1 flex items-center justify-between">
+			<span class="text-white text-lg">{ b.Title }</span>
+		</div>
+		<div class="p-3 flex gap-4 items-start">
+			if b.ImageURL != "" {
+				<div class="win98-border-inset shrink-0">
+					<img src={ b.ImageURL } alt={ b.Title } class="w-16 h-24 object-cover"/>
+				</div>
+			} else {
+				<span class="text-5xl shrink-0">&#x1F4D6;</span>
+			}
+			<div>
+				<p class="text-base font-bold">{ b.Author }</p>
+				if b.Shelf != "" {
+					<span class="win98-border-inset bg-white px-2 text-sm">{ b.Shelf }</span>
+				}
+				<div class="mt-1 flex gap-0.5">
+					for i := 0; i < b.Rating; i++ {
+						<span class="text-yellow-500">&#x2B50;</span>
+					}
+				</div>
+				if b.Review != "" {
+					<p class="mt-2 text-base">{ b.Review }</p>
+				}
+				if b.Link != "" {
+					<a href={ templ.SafeURL(b.Link) } target="_blank" rel="noopener"
+						class="win98-btn inline-block text-black no-underline mt-2 text-sm">Goodreads</a>
+				}
+			</div>
+		</div>
+	</div>
+}
+
+templ BooksFullPage(books []Book) {
+	@layout("Books") {
+		@BooksPage(books)
+	}
+}
