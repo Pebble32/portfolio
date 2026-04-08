@@ -63,7 +63,7 @@ func ProjectCard(p Project) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "\" hx-target=\"#content\" hx-push-url=\"true\" class=\"block w-full max-w-lg win98-border bg-[#c0c0c0] no-underline text-black hover:brightness-105\"><div class=\"bg-[#000080] px-3 py-1\"><span class=\"text-white text-lg\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "\" hx-target=\"#content\" hx-push-url=\"true\" class=\"block w-full win98-border bg-[#c0c0c0] no-underline text-black hover:brightness-105\"><div class=\"bg-[#000080] px-3 py-1\"><span class=\"text-white text-lg\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

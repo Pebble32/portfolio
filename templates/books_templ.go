@@ -38,7 +38,7 @@ func BooksPage(books []Book) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"p-6\"><h1 class=\"text-3xl text-[#000080]\">C:\\Users\\Adam&gt; type books.txt</h1><p class=\"mt-3 text-lg\">Since I made this portfolio I thought it would be good to start using Goodreads</p><div class=\"mt-6 flex flex-col items-center gap-4\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"p-6\"><h1 class=\"text-3xl text-[#000080]\">C:\\Users\\Adam&gt; type books.txt</h1><p class=\"mt-3 text-lg\">Since I made this portfolio I thought it would be good to start using Goodreads</p><div class=\"mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -77,7 +77,7 @@ func BookCard(b Book) templ.Component {
 			templ_7745c5c3_Var2 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "<div class=\"w-full max-w-lg win98-border bg-[#c0c0c0]\"><div class=\"bg-[#000080] px-3 py-1 flex items-center justify-between\"><span class=\"text-white text-lg\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "<div class=\"w-full win98-border bg-[#c0c0c0]\"><div class=\"bg-[#000080] px-3 py-1 flex items-center justify-between\"><span class=\"text-white text-lg\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

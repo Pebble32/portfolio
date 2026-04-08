@@ -58,7 +58,7 @@ func ProjectsPage() templ.Component {
 			templ_7745c5c3_Var2 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "<div class=\"p-6\"><h1 class=\"text-3xl text-[#000080]\">Projects</h1><div class=\"mt-6 flex flex-col items-center gap-4\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "<div class=\"p-6\"><h1 class=\"text-3xl text-[#000080]\">C:\\Users\\Adam&gt; dir /projects</h1><div class=\"mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
