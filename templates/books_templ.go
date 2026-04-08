@@ -38,7 +38,7 @@ func BooksPage(books []Book) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"p-6\"><h1 class=\"text-3xl text-[#000080]\">C:\\Users\\Adam&gt; type books.txt</h1><p class=\"mt-3 text-lg\">I pick up books faster than I pick up new frameworks. Here's the proof.</p><div class=\"mt-6 flex flex-col items-center gap-4\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"p-6\"><h1 class=\"text-3xl text-[#000080]\">C:\\Users\\Adam&gt; type books.txt</h1><p class=\"mt-3 text-lg\">Since I made this portfolio I thought it would be good to start using Goodreads</p><div class=\"mt-6 flex flex-col items-center gap-4\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
