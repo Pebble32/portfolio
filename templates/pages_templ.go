@@ -29,7 +29,7 @@ func HomePage() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"p-6\"><h1 class=\"text-3xl text-[#000080]\">C:\\Users\\Adam&gt; whoami</h1><div class=\"mt-4 text-lg leading-relaxed\"><p>ML/AI Engineer based in Reykjavik, Iceland. Currently building ML pipelines at Dohop that process billions of rows daily</p><p class=\"mt-3\">Outside of work, I enjoy lifting weights and strategically skipping cardio.</p><p class=\"mt-3\">Press projects to see what I have done...</p></div></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"p-6\"><h1 class=\"text-3xl text-[#000080]\">C:\\Users\\Adam&gt; whoami</h1><div class=\"mt-4 text-lg leading-relaxed\"><p>ML/AI Engineer based in Reykjavik, Iceland. Currently building ML pipelines at Dohop that process billions of rows daily.</p><p class=\"mt-3\">Outside of work, I enjoy lifting weights and strategically skipping cardio.</p><p class=\"mt-3\">Press projects to see what I have done...</p></div></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

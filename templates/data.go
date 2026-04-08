@@ -1,5 +1,7 @@
 package templates
 
+// import "errors"
+
 func GetProjectBySlug(slug string) (Project, bool) {
 	for _, p := range projects {
 		if p.Slug == slug {
@@ -7,6 +9,11 @@ func GetProjectBySlug(slug string) (Project, bool) {
 		}
 	}
 	return Project{}, false
+}
+
+func GetBooks() ([]Book, error){
+	return nil, nil
+	//return nil, errors.New("Error while fetching books")
 }
 
 var projects = []Project{

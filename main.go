@@ -47,6 +47,17 @@ func main() {
 		}
 	})
 
+	http.HandleFunc("/books", func(w http.ResponseWriter, r *http.Request) {
+		books, err := templates.GetBooks()
+		if err == nil {
+			if r.Header.Get("HX-Request") == "true" {
+				templates.BooksPage(books).Render(r.Context(), w)
+			} else {
+				templates.BooksFullPage(books).Render(r.Context(), w)
+			}	
+		}
+	})
+
 	http.HandleFunc("/window/minimize", func(w http.ResponseWriter, r *http.Request) {
 		templates.WindowMinimized().Render(r.Context(), w)
 	})
