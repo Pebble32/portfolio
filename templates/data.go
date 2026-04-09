@@ -4,6 +4,7 @@ import (
 	"encoding/xml"
 	"io"
 	"net/http"
+	"slices"
 	"strconv"
 )
 
@@ -21,6 +22,7 @@ type Item struct{
       Link       string `xml:"link"`
       ImageURL   string `xml:"book_image_url"`
       UserShelves string `xml:"user_shelves"`
+	  ReadAt string `xml:"user_read_at"`
 }
 
 func GetProjectBySlug(slug string) (Project, bool) {
@@ -32,7 +34,7 @@ func GetProjectBySlug(slug string) (Project, bool) {
 	return Project{}, false
 }
 
-func GetBooks() ([]Book, error){
+func GetAndSortBooks() ([]Book, error){
 	res, err := http.Get("https://www.goodreads.com/review/list_rss/164496014")
 	if err != nil {
 		return nil, err
@@ -51,7 +53,11 @@ func GetBooks() ([]Book, error){
 
 	var books []Book
 	for _, item := range rss.Channel.Items{
+		shelf := item.UserShelves
 		rating, _ := strconv.Atoi(item.UserRating)
+		if shelf == "" && (item.ReadAt != "" || rating != 0){
+			shelf = "read"
+		}
 		books = append(books, Book{
 			Title:    item.Title,
 			Author:   item.AuthorName,
@@ -59,10 +65,25 @@ func GetBooks() ([]Book, error){
 			Review:   item.UserReview,
 			Link:     item.Link,
 			ImageURL: item.ImageURL,
-			Shelf:    item.UserShelves,
+			Shelf:    shelf,
 		})
 	}
+
+	slices.SortFunc(books, func(a, b Book) int {
+		return shelfOrder(a.Shelf) - shelfOrder(b.Shelf)
+	})
 	return books, nil
+}
+
+func shelfOrder(shelf string) int{
+	switch shelf {
+	case "read":
+		return 0
+	case "currently-reading":
+		return 1
+	default:
+		return 2
+	}
 }
 
 var projects = []Project{

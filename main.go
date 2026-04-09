@@ -48,7 +48,7 @@ func main() {
 	})
 
 	http.HandleFunc("/books", func(w http.ResponseWriter, r *http.Request) {
-		books, err := templates.GetBooks()
+		books, err := templates.GetAndSortBooks()
 		if err == nil {
 			if r.Header.Get("HX-Request") == "true" {
 				templates.BooksPage(books).Render(r.Context(), w)
