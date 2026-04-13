@@ -42,3 +42,9 @@ templ WindowProjects() {
 		@ProjectsPage()
 	}
 }
+
+templ WindowBooks(books []Book) {
+    @Window() {
+        @BooksPage(books)
+    }
+}

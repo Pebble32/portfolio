@@ -68,7 +68,12 @@ func main() {
 		case "projects":
 			templates.WindowProjects().Render(r.Context(), w)
 		case "books":
-			templates.WindowProjects().Render(r.Context(), w)
+			books, err := templates.GetAndSortBooks()
+			if err != nil{
+				http.Error(w, err.Error(), 500)
+				return
+			}
+			templates.WindowBooks(books).Render(r.Context(), w)
 		default:
 			templates.WindowHome().Render(r.Context(), w)
 		}
