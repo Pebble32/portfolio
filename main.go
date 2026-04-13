@@ -67,6 +67,8 @@ func main() {
 		switch page {
 		case "projects":
 			templates.WindowProjects().Render(r.Context(), w)
+		case "books":
+			templates.WindowProjects().Render(r.Context(), w)
 		default:
 			templates.WindowHome().Render(r.Context(), w)
 		}
